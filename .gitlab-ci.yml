@@ -1,0 +1,26 @@
+include:
+  - component: $CI_SERVER_FQDN/parkingguidancesystems/mobility/ci-templates/baseline@1
+
+stages:
+  - test
+
+# Checks the plugin itself. The example app predates null safety and no longer
+# resolves, and the only test file is empty, so this skips both. ParkZen's own
+# builds compile the plugin.
+flutter:check:
+  stage: test
+  image: ghcr.io/cirruslabs/flutter:3.35.7
+  needs: []
+  variables:
+    PUB_CACHE: $CI_PROJECT_DIR/.pub-cache
+  cache:
+    key:
+      files:
+        - pubspec.yaml
+      prefix: flutter-3.35.7
+    paths:
+      - .pub-cache
+  script:
+    - flutter --disable-analytics
+    - flutter pub get --no-example
+    - flutter analyze lib
