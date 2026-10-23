@@ -1,5 +1,7 @@
 # Braintree for Flutter
 
+> **ParkZen fork.** This is ParkZen's fork of [pikaju/flutter-braintree](https://github.com/pikaju/flutter-braintree), with Android and Braintree SDK fixes. The source lives on GitLab at [mobility/flutter-braintree](https://gitlab.com/parkingguidancesystems/mobility/flutter-braintree). `ParkZenApp/flutter-braintree` on GitHub is a read-only mirror that the ParkZen app pulls from with `ref: main`, so anything merged to `main` reaches ParkZen on its next `flutter pub upgrade`.
+
 A Flutter plugin that wraps the native [Braintree SDKs](https://www.braintreepayments.com/features/seamless-checkout/drop-in-ui).
 Unlike other plugins, this plugin not only lets you start Braintree's native Drop-in UI, but also allows you to create your own custom Flutter UI with Braintree functionality.
 
